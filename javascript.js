@@ -21,6 +21,8 @@ for(let i = 0; i < fillGrid.length; i++){
     fillGrid[i].addEventListener("mouseover", function(){fillGrid[i].classList.add("filled-element")});
 }
 
-for(let i = 0; i< fillGrid.length; i++){
+
+// on click event, adds class to colored-element
+/* for(let i = 0; i< fillGrid.length; i++){
     fillGrid[i].addEventListener("click", function(){fillGrid[i].classList.add("colored-element")});
-}
+} */

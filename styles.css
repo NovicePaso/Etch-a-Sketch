@@ -1,7 +1,8 @@
 div.grid-element {
    border: 1px solid black;
-   width: 20px;
-   height: 20px;
+   display: flex;
+   align-items: stretch;
+   flex-grow: 1;
 }
 
 div.filled-element{
@@ -10,8 +11,17 @@ div.filled-element{
 
 .grid-container{
     display: flex;
+    width: 960px;
+    height: 960px;
 }
 
 div.colored-element{
     background-color: red;
+}
+
+.grid-column{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow: 1;
 }
