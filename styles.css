@@ -3,9 +3,9 @@ div.grid-element {
    flex-grow: 1;
 }
 
-div.filled-element{
-    background-color: gray;
-}
+/* div.filled-element{
+   background-color: gray;
+} */
 
 .grid-container{
     display: flex;

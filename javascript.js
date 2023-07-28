@@ -33,17 +33,39 @@ for (let i = 0; i < gridColumns.length; i++){
 }
 createGrid(input);
 
-// set up "hover" effect with addEventListener for when a mouse enters a "grid-element".  use parameter "once"
+//generates random color for filled-element
+const hexCharacters = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
+
+function getCharacter(index){
+    return hexCharacters[index];
+}
+
+function generateNewColor(){
+    let hexColorRep = "#";
+    for (let index = 0; index < 6; index++){
+        const randomPosition = Math.floor(Math.random()*hexCharacters.length);
+        hexColorRep += getCharacter(randomPosition);
+    }
+    return hexColorRep;
+}
+
+// set up "hover" effect with addEventListener for when a mouse enters a "grid-element"
 var fillGrid = document.getElementsByClassName("grid-element");
 
 for(let i = 0; i < fillGrid.length; i++){
     fillGrid[i].addEventListener("mouseover", function(){
-        fillGrid[i].classList.add("filled-element")
+        const newColor = generateNewColor();
+        fillGrid[i].classList.add("filled-element");
+        this.style.backgroundColor = newColor;
     });
 }
-// on click event, removes filled element
+
+// on click event, removes filled element color
 for(let i = 0; i< fillGrid.length; i++){
-    fillGrid[i].addEventListener("click", function(){fillGrid[i].classList.remove("filled-element")});
+    fillGrid[i].addEventListener("click", function(){
+        fillGrid[i].classList.remove("filled-element")
+        this.style.backgroundColor = null;
+    });
 }
 })
 
